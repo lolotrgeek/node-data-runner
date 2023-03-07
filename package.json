@@ -1,6 +1,6 @@
 {
   "name": "node-data-runner",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Calls a function for each value in an array and waits for a timeout between each call.",
   "main": "main.js",
   "scripts": {
