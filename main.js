@@ -12,7 +12,14 @@ function run(values, func, timeout = 210) {
     let current_timeout = 0
     let settled = Promise.allSettled(values.map(value => {
         let new_timeout = current_timeout + timeout
-        let runner = new Promise(resolve => setTimeout(async () => resolve(Array.isArray(value) ? await func(...value): await func(value)), new_timeout))
+        let runner = new Promise(resolve => setTimeout(async () => {
+            try {
+                resolve(Array.isArray(value) ? await func(...value): await func(value))
+            } catch (error) {
+                resolve(error)                
+            }
+
+        }, new_timeout))
         current_timeout = new_timeout
         return runner
     }))
