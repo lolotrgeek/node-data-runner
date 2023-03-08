@@ -1,8 +1,8 @@
 
 /**
- * Calls a function for each value in an array and waits for a timeout between each call
+ * Calls a function for each value in an array then assigns and increases a timeout for each call
  * 
- * @param {array} values an array of values where each value is passed to the `func` in a separate call
+ * @param {array} values an array of values where each iteration calls `func` on the current value
  * @param {function} func 
  * @param {number} timeout (ms) defaults to  5 calls per second, or 300 calls/minute, 1 call every 200ms
  * @returns waits for all runners to settle then returns an `array` of results 
